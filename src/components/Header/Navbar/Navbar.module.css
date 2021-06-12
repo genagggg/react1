@@ -1,0 +1,13 @@
+ nav {
+  align-self: flex-end;
+  border: 2px solid grey;
+}
+
+ nav ul {
+  display: flex;
+  border: 2px solid green;
+
+}
+ nav ul li {
+  list-style: none;
+}
