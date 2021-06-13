@@ -1,13 +1,18 @@
  nav {
-  align-self: flex-end;
-  border: 2px solid grey;
+  align-self: center;
 }
 
  nav ul {
   display: flex;
-  border: 2px solid green;
 
 }
  nav ul li {
+   margin: 5px;
   list-style: none;
+  color: #fff;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }
