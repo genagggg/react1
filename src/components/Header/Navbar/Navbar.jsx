@@ -5,11 +5,11 @@ return (
    
           <nav>
             <ul>
-              <li><a href="#">Main</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Roof</a></li>
+              <li><a href="/main">Main</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/news">News</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/roof">Roof</a></li>
             </ul>
            </nav> 
   
