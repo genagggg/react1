@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Header.module.css';
-import Navbar from './Navbar/Navbar.jsx';
+import Navbar from '../Navbar/Navbar.jsx';
 import Logo from './Logo/Logo.jsx';
 const Header =()=> {
     return (

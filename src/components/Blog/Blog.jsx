@@ -1,4 +1,3 @@
-import s from '../Main/Main.module.css';
 
 const Blog =(props)=> {
     return (
