@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header.jsx';
-import Content from './components/Content/Content.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Main from './components/Main/Main.jsx';
@@ -13,14 +12,14 @@ function App() {
   return (<BrowserRouter>
     <div>
        <Header />
-       <div className="Wrapper">
-         <Route path="/content" component={Content} />
-       <Route path='/main' component={Main} />
-<Route path='/blog' component={Blog} />
-<Route path='/news' component={News} />
-<Route path='/contact' component={Contact} />
-<Route path='/roof' component={Roof} />
-       </div>
+       <div className="wrapper">
+         <Route path='/main' component={Main} />
+         <Route  path='/blog' component={Blog} />
+         <Route path='/news' component={News} />
+         <Route path='/contact' component={Contact} />
+         <Route path='/roof' component={Roof} />
+        
+         </div>
        <Footer />
         </div>
         </BrowserRouter >
