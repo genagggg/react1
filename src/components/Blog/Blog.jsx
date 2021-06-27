@@ -1,14 +1,7 @@
 import React from 'react';
 import s from './Blog.module.css';
-import { NavLink } from 'react-router-dom';
-const User =(props)=>{
-
-let path="/blog/"+props.id;
-
-return <NavLink to={path}><div className={s.useR}>
-{props.name}
- </div></NavLink>
-}
+import User from './User/User';
+import Message from './Message/Message';
 
 const Blog =(props)=> {
 
@@ -18,21 +11,30 @@ const Blog =(props)=> {
         {id:3, name:'Artur'},
         {id:4, name:'Anjela'},
         {id:5, name:'Svets'}
-    ]
+    ];
+let messageUser = [
+    {id:1, messages:"Hi"},
+    {id:2, messages:"How"},
+    {id:3, messages:"Are"},
+    {id:4, messages:"You"},
+    {id:5, messages:"yes"}
+];
+
+    let userData = n.map(
+        n=><User name={n.name} id={n.id} />
+    );
+
+    let messagU = messageUser.map(
+        m => <Message name={m.messages} />
+    );
+    
     return <div className={s.Blog}>
 <div className={s.userName}>
-<User name={n[0].name} id={n[0].id}/>
-<User name={n[1].name} id={n[1].id} />
-<User name={n[2].name} id={n[2].id} />
-<User name={n[3].name} id={n[3].id} />
-<User name={n[4].name} id={n[4].id} />
+{userData}
 </div>
 
 <div className={s.message}>
-    <div className={s.mess}>Hi</div>
-    <div className={s.mess}>How are you</div>
-    <div className={s.mess}>yo</div>
-    <div className={s.mess}>Hi</div>
+    {messagU}
 </div>
 </div>
     
