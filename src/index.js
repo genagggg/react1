@@ -3,28 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-let n = [
-  {id:1, name:'Andrey'},
-  {id:2, name:'Robert'},
-  {id:3, name:'Artur'},
-  {id:4, name:'Anjela'},
-  {id:5, name:'Svets'}
-];
+import state, { subscribe } from './redux/state';
+import {addPost, updateNewPostText} from './redux/state';
 
-
-let messageUser = [
-{id:1, messages:"Hi"},
-{id:2, messages:"How"},
-{id:3, messages:"Are"},
-{id:4, messages:"You"},
-{id:5, messages:"yes"}
-];
+let rerenderEntireTree = ()=>{
 ReactDOM.render(
   <React.StrictMode>
-    <App n={n} messageUser={messageUser}/>
+    <App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
+}
+rerenderEntireTree();
+subscribe(rerenderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
