@@ -9,12 +9,7 @@ return (
               <li><NavLink to="/main">Main</NavLink></li>
               <li><NavLink to="/blog">Blog</NavLink></li>
               <li><NavLink to="/news">News</NavLink></li>
-              <li><NavLink to="/contact">Contact</NavLink></li>
-              <li><NavLink to="/roof">Roof</NavLink></li>
-              <li><NavLink to="/couch">Couch</NavLink></li>
-              <li><NavLink to="/mmm">Mmm</NavLink></li>
-              <li><NavLink to="/grisha">Grisha</NavLink></li>
-            </ul>
+       </ul>
            </nav> 
   
 );
