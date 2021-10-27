@@ -13,6 +13,11 @@ const Main =(props)=> {
         users: [
             {id: 1, name: "Igor"},
             {id:2, name: "Roma"}
+        ],
+        userOld:[
+            {id: 1, old: 21},
+            {id: 2, old: 24},
+            {id: 3, old: 34}
         ]
     }
 
