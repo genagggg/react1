@@ -1,8 +1,12 @@
 import React from 'react';
+import s from './Blog.module.css';
 
 const Blog =()=> {
 
-    return (<div> </div>);
+    return (<div>
+       <p className={s.color}> Hello world</p> 
+       
+         </div>);
     
 }
 
