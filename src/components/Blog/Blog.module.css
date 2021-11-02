@@ -1,20 +1,4 @@
-.Blog {
-    display: flex;
+.color {
+    color: red;
 }
 
-.userName {
-   
-}
-
-.Blog .userName .user {
-    margin: 10px;
-    
-}
-.mess {
-    margin: 10px;
-    color: yellowgreen;
-}
-.useR{
-color:red;
-margin: 10px;
-}
