@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import { Route} from 'react-router-dom';
-import Main from './components/Main/Main.jsx';
+import MainContainer from './components/Main/MainContainer';
 import Blog from './components/Blog/Blog.jsx';
 import News from './components/News/News.jsx';
 import Contact from './components/Contact/Contact.jsx';
@@ -17,7 +17,7 @@ const App=(props)=> {
     <div>
        <Header />
        <div className="wrapper">
-         <Route path='/main' render={()=><Main />} />
+         <Route path='/main' render={()=><MainContainer />} />
          <Route  path='/blog' render={()=><Blog  />} />
          <Route path='/news' render={()=><News />} />
      </div>
