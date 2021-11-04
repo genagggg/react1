@@ -6,6 +6,7 @@ import { Route} from 'react-router-dom';
 import MainContainer from './components/Main/MainContainer';
 import Blog from './components/Blog/Blog.jsx';
 import News from './components/News/News.jsx';
+import Users from './components/Users/Users';
 import Contact from './components/Contact/Contact.jsx';
 import Roof from './components/Roof/Roof.jsx';
 import Couch from './components/Couch/Couch';
@@ -20,6 +21,7 @@ const App=(props)=> {
          <Route path='/main' render={()=><MainContainer />} />
          <Route  path='/blog' render={()=><Blog  />} />
          <Route path='/news' render={()=><News />} />
+         <Route path='/users' render={()=><Users />}/>
      </div>
        <Footer />
         </div>
