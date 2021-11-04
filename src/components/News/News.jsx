@@ -3,7 +3,7 @@ import React from 'react';
 const News =(props)=> {
    
         return (<div>
-                <p className={s.color}>It's a page News, Hello every body</p>
+                <p className={s.color}>It's a page </p>
         </div>);
  
 
