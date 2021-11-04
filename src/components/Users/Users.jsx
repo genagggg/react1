@@ -1,9 +1,10 @@
 import React from "react";
 
 const Users =(props)=>{
+    let use = props.users.map(u=><p>{u.name}</p>);
 return(
     <div>
-        Hello world!
+        {use}
     </div>
 )
 }

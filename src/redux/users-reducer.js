@@ -7,7 +7,7 @@ let initialState = {
     ]
 }
 const usersReducer=(state=initialState, action)=>{
-return 0;
+return state;
 }
 
 export default usersReducer;
