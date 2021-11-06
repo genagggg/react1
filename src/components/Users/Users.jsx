@@ -4,22 +4,18 @@ import s from "./Users.module.css";
 const Users =(props)=>{
 let gef=React.createRef();
 
-
-
-let alerTO =()=>{
-    let text = gef.current.value;
-    alert(text);
+let onAddPost = () => {
+    props.addPost();
 }
 
-
-    let use = props.users.map(u=><p>{u.name}</p>);
+let use = props.users.map(u=><p>{u.name}</p>);
 return(
     <div>
        <div>{use}</div> 
 
        <div>
-           <textarea ref={gef} className={s.textarrea}></textarea>
-           <button onClick={alerTO}>Нажим</button>
+           <textarea ref={gef} className={s.textarrea} value={props.newPostText}></textarea>
+           <button onClick={onAddPost}>Нажим</button>
        </div>
     </div>
 )
