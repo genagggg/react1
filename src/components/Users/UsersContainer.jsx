@@ -1,6 +1,6 @@
 
 import { connect } from "react-redux";
-import { addPostAC } from "../../redux/users-reducer";
+import { addPostAC, updateNewPostTextAC } from "../../redux/users-reducer";
 import Users from "./Users";
 
 let mapStateToProps =(state)=>{
@@ -11,9 +11,15 @@ let mapStateToProps =(state)=>{
 }
 
 let mapDispatchToProps = (dispatch) => {
-    return {addPost:() => {
+    return {
+        updateNewPostText: (text) => {
+            dispatch(updateNewPostTextAC(text));
+        },
+        
+        addPost:() => {
         dispatch(addPostAC());
     }
+  
 }
 }
 
