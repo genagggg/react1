@@ -1,6 +1,6 @@
 import News from "./News";
 import { connect } from "react-redux";
-import { addPostAC } from "../../redux/users-reducer";
+import { addPostAC, updateNewPostTextAC } from "../../redux/users-reducer";
 
 let mapStateToProps =(state)=>{
 return {
@@ -10,10 +10,18 @@ newPostText: state.newsPage.newPostText
 }
 
 let mapDispatchToProps = (dispatch) =>{
+
     return {
-addPost: ()=>{ dispatch(addPostAC())}
-    }
+updateNewPostChange: (text)=>{
+        dispatch(updateNewPostTextAC(text));
+    },
+addPost: ()=>{ dispatch(addPostAC());
 }
+    }
+
+}
+
+
 
 const NewsContainer = connect(mapStateToProps, mapDispatchToProps)(News);
 export default NewsContainer;
