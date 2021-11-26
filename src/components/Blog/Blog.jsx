@@ -1,20 +1,23 @@
 import React from 'react';
 import s from './Blog.module.css';
 
-const Blog =()=> {
-let mess = {
-    mess1:[
-        {id: 1, name:'igor'},
-        {id: 2, name: 'jora'},
-        {id: 3, name: 'kolya'}
-    ]
-}
+const Blog =(props)=> {
 
-let mess2 = mess.mess1.map(m=><div>{m.name}</div>)
+    let reff=React.createRef();
+    let onAddPost=()=>{
+        return props.addNewPost();
+    }
+   let onUpdateText=()=>{
+        let text=reff.current.value;
+        return props.updateNewPostText(text);
+    }
+let use = props.users.map(u=><p>{u.name}</p>);
+
     return (<div>
-       <p className={s.color}>{mess2}</p> 
-       
-         </div>);
+        <div>{use}</div>
+        <div><textarea onChange={onUpdateText} ref={reff} value={props.newPostText}></textarea></div>
+       <div><button onClick={onAddPost}>Click Me Please</button></div>
+       </div>);
     
 }
 

@@ -10,6 +10,7 @@ return (
               <li><NavLink to="/blog">Blog</NavLink></li>
               <li><NavLink to="/news">News</NavLink></li>
               <li><NavLink to="/users">Users</NavLink></li>
+              <li><NavLink to="/go">Go</NavLink></li>
        </ul>
            </nav> 
   

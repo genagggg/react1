@@ -9,10 +9,10 @@
  nav ul li {
    margin: 5px;
   list-style: none;
-  color: #fff;
+  color: rgb(19, 12, 12);
 }
 a {
-  color: #fff;
+  color: rgb(14, 10, 10);
   text-decoration: none;
   cursor: pointer;
 }
