@@ -7,6 +7,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import NewsContainer from './components/News/NewsContainer';
 import Go from './components/Go/Go';
 import BlogContainer from './components/Blog/BlogContainer';
+import RepContainer from './components/Rep/RepContainer';
 const App=(props)=> {
 
   return (
@@ -17,7 +18,8 @@ const App=(props)=> {
          <Route  path='/blog' render={()=><BlogContainer  />} />
          <Route path='/news' render={()=><NewsContainer />} />
          <Route path='/users' render={()=><UsersContainer />}/>
-         <Route path='/go' render={()=><Go />}/>
+        <Route path='/rep' render={()=><RepContainer/>} />
+       <Route path='/go' render={()=><Go />}/>
        </div>
        <Footer />
     </div>
