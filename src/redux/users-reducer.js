@@ -1,38 +1,30 @@
-const ADD_POST = 'ADD_POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+const FOLLOW = "FOLLOW";
+const UNFOLLOW = "UNFOLLOW";
 
 let initialState = {
-    users:[
-        {id: 1, name: 'Aleksandr', age: 23},
-        {id: 2, name: 'Yuriy', age: 32},
-        {id: 3, name: 'Grigoriy', age: 21}
-    ],
-    newPostText: 'it-incubator'
+    users: [
+        {id:1,followed:false, fullName: "Oleg", status: "I am a boss", location:{city: "Minsk", country: "Belarus"}},
+        {id:2,followed:false, fullName: "Robert", status: "I am a boss too", location:{city: "Moscow", country: "Russia"}},
+        {id:3,followed:true, fullName: "Andrey", status: "I am a boss every day", location:{city: "Kiev", country: "Ukrain"}},
+        {id:4,followed:false, fullName: "Alehandro Koba", status: "I am a boss second chip", location:{city: "Tbilicy", country: "Georgia"}}
+
+    ]
 }
 const usersReducer=(state=initialState, action)=>{
 switch(action.type){
-    case ADD_POST:{
-let newPost={
-    id: 4,
-    name: state.newPostText,
-    age:0
-};
-return {...state,
-users:[...state.users, newPost],
-newPostText: ''
+case FOLLOW:{
+    return{
+        ...state,
+        users:state.users.map(u=>{
+            if(u.id===action.userId){
+                return {...u, followed: true}
+            }
+            return u})
+    }
 }
-    }
-    case UPDATE_NEW_POST_TEXT:{
-        return {...state,
-        newPostText: action.newText 
-    }
-    }
 default:
     return state;
-}
-}
-
-export const addPostAC = () => ({type: ADD_POST});
-export const updateNewPostTextAC = (text)=> ({type: UPDATE_NEW_POST_TEXT, newText: text});
-
+}}
+export const followAC=(userId)=>({type: FOLLOW, userId});
+export const unfollowAC=(userId)=>({type: UNFOLLOW, userId});
 export default usersReducer;
