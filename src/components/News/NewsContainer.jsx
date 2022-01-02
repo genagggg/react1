@@ -1,6 +1,6 @@
 import News from "./News";
 import { connect } from "react-redux";
-import { addPostAC, updateNewPostTextAC } from "../../redux/users-reducer";
+import { addPostAC, updateNewPostTextAC } from "../../redux/news-reducer";
 
 let mapStateToProps =(state)=>{
 return {

@@ -1,17 +1,23 @@
 import Main from './Main'
 import {connect} from 'react-redux'
-import { addNewPost, updateNewPostText } from '../../redux/main-reducer'
+import {  followAC, setUsersAC, unfollowAC } from '../../redux/main-reducer'
 let mapStateToProps=(state)=>{
     return{
-        users: state.mainPage.users,
-        newPostText: state.mainPage.newPostText
+        users: state.mainPage.users
     }
 }
 
 let mapDispatchToProps =(dispatch)=>{
     return {
-        addNewPost:()=>{dispatch(addNewPost())},
-        updateNewPostText: (text)=>{dispatch(updateNewPostText(text))}
+        follow:(userId)=>{
+            dispatch(followAC(userId))
+        },
+        unfollow: (userId)=>{
+            dispatch(unfollowAC(userId))
+        },
+        setUsers:(users)=>{
+            dispatch(setUsersAC(users))
+        }
     }
 }
 
