@@ -1,42 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import s from './Main.module.css';
 import MainButton from './MainButton/MainButton';
 import { Button } from '@mui/material';
 
 
-function completCounter() {
-    console.log("some calculation")
-    return Math.trunc(Math.random() * 20)
-}
-
 const Main = (props) => {
 
-    const [counter, setCounter] = useState(() => { return completCounter() })
+    const [type, setType] = useState('users')
+    const [data, setData] = useState([])
 
-    function increment() {
+    // useEffect(() => {
+    //     console.log('render')
+    // })
 
-        setCounter(counter + 1)
-
-    }
-
-    function decrement() {
-        setCounter(counter - 1)
-    }
-
-    const [state, setState] = useState({
-        title: "Счётчик",
-        date: Date.now()
-    })
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/${type}`)
+            .then(response => response.json())
+            .then(json => setData(json))
+    }, [type])
 
     return (
         <div>
-            <h1>Счётчик: {counter}</h1>
-            <button onClick={increment} className='btn btn-success'>Добавить</button>
-            <button onClick={decrement} className='btn btn-danger'>Убрать</button>
-            <button onClick={() => setState({ title: 'Новое название' })} className='btn btn-danger'>Изменить название</button>
-            <Button variant="outlined" onClick={() => setState({ title: 'Новое название' })}>Outlined</Button>
+            <h1>Ресурс: {type}</h1>
+
+            <button onClick={() => setType("users")}>Пользователи</button>
+            <button onClick={() => setType('todos')}>Todu</button>
+            <button onClick={() => setType('posts')}>Posts</button>
             <pre>
-                {JSON.stringify(state, null, 2)}
+                {JSON.stringify(data, null, 2)}
             </pre>
         </div>
     );
