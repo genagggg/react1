@@ -34,7 +34,7 @@ const Main = (props) => {
             <button onClick={increment} className='btn btn-success'>Добавить</button>
             <button onClick={decrement} className='btn btn-danger'>Убрать</button>
             <button onClick={() => setState({ title: 'Новое название' })} className='btn btn-danger'>Изменить название</button>
-            <Button variant="outlined">Outlined</Button>
+            <Button variant="outlined" onClick={() => setState({ title: 'Новое название' })}>Outlined</Button>
             <pre>
                 {JSON.stringify(state, null, 2)}
             </pre>
